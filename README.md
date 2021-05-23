@@ -1,6 +1,6 @@
-# Digital Innovation One - Prática .NET
+# Projeto Teste em angular - Prática .NET
 
-## POO na prática: criando uma aplicação
+## Primeira etapa: criando uma aplicação
 
 ## Contato
 
