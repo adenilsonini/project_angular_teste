@@ -1,0 +1,69 @@
+<table class="table table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome usuario</th>
+      <th scope="col">Password</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+
+</table>
+
+
+
+<div class="row">
+
+  <div class="col-md-12">
+
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4><fa-icon [icon]="faHandPointLeft"></fa-icon> Cadastrar Usuario </h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+      <div class="modal-body">
+
+        <form>
+          <div class="form-Group">
+            <label for="user">Nome Conpleto</label>
+             <input type="email" class="form-control" id="user_name" name="name"  placeholder="Informe o seu nome">
+         </div>
+
+         <div class="form-Group">
+          <label for="user">E-mail</label>
+           <input type="email" class="form-control" id="user_email" name="email"  placeholder="Informe o seu e-mail">
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="form-Group">
+                 <label for="senha">Senha</label>
+                 <input  type="password" class="form-control" id="senha" name="senha" placeholder="Informe a senha">
+            </div>
+
+          </div>
+
+            <div class="col-md-6">
+
+            <div class="form-Group">
+                <label for="Confirma senha">Confirma Senha</label>
+                <input  type="password" class="form-control" id="senha_confirma" name="senha_confirma" placeholder="Informe a senha">
+           </div>
+
+          </div>
+        </div>
+
+        </form>
+
+      </div> <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+      </div>
+    </ng-template>
+
+    <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Cadastrar usuario</button>
+
+  </div>
+</div>

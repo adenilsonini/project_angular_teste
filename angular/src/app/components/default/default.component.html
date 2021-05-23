@@ -1,0 +1,38 @@
+<div class="row">
+
+
+     <div class="col-md-3" style="text-align: center;">
+           <h1>Seja Bem vindo</h1>
+     </div>
+     <div class="col-md-6">
+         <div class="divprincipal">
+
+        <ngb-carousel>
+
+             <ng-template ngbSlide *ngFor="let image of images">
+                <div class="picsum-img-wrapper">
+                   <a [href]="image.url"> <img [src]="image.src" alt="Random first slide" style="width: 650px; height: 400px;"></a>
+                </div>
+
+                <div class="carousel-caption">
+                   <h3>{{image.name}}</h3>
+                   <p>{{image.p}}</p>
+                </div>
+
+            </ng-template>
+
+        </ngb-carousel>
+
+    </div>
+
+
+
+
+
+
+  </div>
+
+</div>
+
+
+
