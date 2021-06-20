@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbCarouselConfig, NgbModal, NgbActiveModal, NgbModalOptions, NgbModalRef, ModalDismissReasons, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbActiveModal, NgbModalOptions, NgbModalRef, ModalDismissReasons, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { faAddressCard, faPlusCircle} from '@fortawesome/free-solid-svg-icons';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-usuario',
@@ -8,10 +9,14 @@ import { faAddressCard, faPlusCircle} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit {
+
+  public UserForm: FormGroup;
+
   closeResult = '';
   faHandPointLeft = faPlusCircle;
 
-  constructor(private modalService: NgbModal) { }
+
+  constructor(private modalService: NgbModal, private fb: FormBuilder) { this.criarForm(); }
 
   open(content: any) {
     this.modalService.open(content, {backdrop: 'static', keyboard: false, centered: true, ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -32,6 +37,38 @@ export class UsuarioComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  criarForm() {
+    this.UserForm = this.fb.group({
+      id: [0],
+      nome: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+
+
+  get form() {
+    return this.UserForm.controls;
+  }
+  save_user() {
+
+    alert(this.form.nome.value);
+
+    //limpar o formulario
+    this.UserForm.reset();
+
+    //carrega valores nos campos.
+    this.UserForm.patchValue(
+      {
+       nome:'teste',
+       email: 'teste@test.com',
+       password: 'dkfjek45'
+      });
+
+
+
   }
 
 }
