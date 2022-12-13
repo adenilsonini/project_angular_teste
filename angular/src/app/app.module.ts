@@ -10,6 +10,8 @@ import { LoginComponent } from './components/login/login.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UploadimgComponent } from './components/uploadimg/uploadimg.component'
+import { UploadComponent } from './components/upload/upload.component'
 
 
 
@@ -18,7 +20,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppComponent,
     NavComponent,
     LoginComponent,
+    UploadimgComponent,
     UsuarioComponent,
+    UploadComponent,
     DefaultComponent
   ],
   imports: [

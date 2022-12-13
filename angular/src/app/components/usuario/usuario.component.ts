@@ -42,7 +42,7 @@ export class UsuarioComponent implements OnInit {
   criarForm() {
     this.UserForm = this.fb.group({
       id: [0],
-      nome: ['', Validators.required],
+      nome: ['', Validators.required, Validators.minLength(10)],
       email: ['', Validators.required],
       password: ['', Validators.required]
     });

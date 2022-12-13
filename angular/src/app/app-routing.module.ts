@@ -1,14 +1,18 @@
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { LoginComponent } from './components/login/login.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DefaultComponent } from './components/default/default.component';
+import { UploadimgComponent } from './components/uploadimg/uploadimg.component'
+import { UploadComponent } from './components/upload/upload.component'
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'default', component: DefaultComponent },
   { path: 'usuario', component: UsuarioComponent },
+  { path: 'uploadimg', component: UploadimgComponent },
+  { path: 'upload', component: UploadComponent },
   { path: '', redirectTo: 'default', pathMatch: 'full' },
   { path: '**', redirectTo: 'default', pathMatch: 'full' }
 ];

@@ -38,7 +38,8 @@
                 class="form-control" placeholder="Informe o seu nome">
 
               <div class="invalid-feedback">
-                <span>* Informe seu Nome completo, mínimo 10 caracteres</span>
+                <span *ngIf="form.nome.errors?.required">* Informe seu Nome completo</span>
+                <span *ngIf="form.nome.errors?.minlength">* Mínimo 10 caracteres</span>
               </div>
 
             </div>
